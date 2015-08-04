@@ -1,0 +1,29 @@
+<h1>Change Log</h1>
+<% @versions.each do |item| 
+    next if Rails.env == "production" && item[:version] == "In Progress"
+%>
+    <div class="panel">
+        <div class="panel-heading">
+          <h5><%= item[:version] %><% unless item[:date].blank? %></h5> &nbsp; (<%= item[:date] %>)<% end %>
+        </div>
+        <div class="panel-body">
+            <ul class="m-t small-list">
+              <% if item[:changes] %>
+                <% item[:changes].each do |change| %>
+                  <li>
+                    <span class="m-l-xs">
+                    <% unless change[:jira].blank? %>
+                      <%= link_to change[:jira], "https://ecorithm.jira.com/browse/#{change[:jira]}", :target => "_blank" %>
+                      -
+                    <% end %>
+                    <%= change[:description] %>
+                    </span>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+        </div>
+    </div>
+<% end %>
+
+
