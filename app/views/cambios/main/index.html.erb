@@ -2,9 +2,9 @@
 <% @versions.each do |item| 
     next if Rails.env == "production" && item[:version] == "In Progress"
 %>
-    <div class="panel">
-        <div class="panel-heading">
-          <h5><%= item[:version] %><% unless item[:date].blank? %></h5> &nbsp; (<%= item[:date] %>)<% end %>
+    <div class="panel panel-<%= item[:version] == "In Progress" ? "primary" : "success" %>">
+        <div class="panel-heading ">
+          <h3 class="panel-title"><%= item[:version] %><% unless item[:date].blank? %></h3> &nbsp; (<%= item[:date] %>)<% end %>
         </div>
         <div class="panel-body">
             <ul class="m-t small-list">
