@@ -1,8 +1,8 @@
 ---
 - :version: In Progress
-# - :version: 0.0.0
-#   :changes:
-#   - :jira: KEY-123
-#     :description: The name of the jira 
-#   - :description: A feature/bug-fix that doesn't have a jira ticket
+- :version: 0.0.0
+  :changes:
+  - :jira: KEY-123
+    :description: The name of the jira 
+  - :description: A feature/bug-fix that doesn't have a jira ticket
   

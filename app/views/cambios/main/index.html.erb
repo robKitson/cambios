@@ -13,7 +13,7 @@
                   <li>
                     <span class="m-l-xs">
                     <% unless change[:jira].blank? %>
-                      <%= link_to change[:jira], "https://ecorithm.jira.com/browse/#{change[:jira]}", :target => "_blank" %>
+                      <%= link_to change[:jira], "#{Cambios.jira_url}#{change[:jira]}", :target => "_blank" %>
                       -
                     <% end %>
                     <%= change[:description] %>
